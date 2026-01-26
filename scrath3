@@ -1,0 +1,47 @@
+"""
+Created on Mon Jan 26 14:05:26 2026
+
+@author: sits
+"""
+
+import os
+import shutil
+
+source_directory = "./messy_movie_files2"
+new_directory = "./renamed_movie_files"
+
+if not os.path.exists(source_directory):
+    print("Directory not found")
+else:
+    print("Yes it was found")
+
+if not os.path.exists(new_directory):
+    os.makedirs(new_directory)
+
+def RenameMoveFiles(filename):
+    print(f"Old movie name - {filename}")
+    
+    name,ext = os.path.splitext(filename)
+    
+    name = name.replace("_"," ").replace("!"," ").replace("&"," ")
+    
+    parts = name.split()
+    
+    year = "2000"
+    
+    for part in parts:
+        if part.isdigit() and len(part)==4:
+            year = part
+            print(f"year has been found")
+            break
+        
+    director = "director"
+    
+    new_name = f"{name} ({year}) - {director}{ext}"
+    
+    print(f"New movie name - {new_name}")
+    
+    return new_name
+
+for filename in os.listdir(source_directory):
+    RenameMoveFiles(filename)
