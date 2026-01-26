@@ -1,0 +1,27 @@
+"""
+Created on Mon Jan 26 11:18:23 2026
+
+@author: Moses
+
+Created Their project
+Created am empty file called SCRATCH.PY
+PROBLEM- I HAVE AQ BUNCH OF MOVIES I WANTTO RENAME
+
+1. first access those files somehow
+
+2.Rename those files and save to new directory
+"""
+
+movies =["movie1.mp4","movie2.mp4"]
+
+file =open("movie3.mp4","w")
+file.write("")
+file.close()
+
+with open("movie4.mp4","w") as file:
+    file.write("")
+    
+for file in movies:
+    with open(file,"w") as file:
+        file.writable()
+    
